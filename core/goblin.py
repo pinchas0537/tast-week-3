@@ -1,5 +1,4 @@
 from random import randint , choice
-from player import Player
 
 class Goblin:
     
@@ -17,13 +16,13 @@ class Goblin:
     def speak(self):
         print(f"the {self.tape} {self.name} is angry")
         
-    def attack(self):
+    def attack(self,player):
         dice = randint(1,6)
         goblin.speed += dice
-        if goblin.speed > Player.speed or goblin.speed == Player.speed:
+        if goblin.speed > player.speed or goblin.speed == player.speed:
             cube = randint(1,20)
             goblin.speed += cube
-            if goblin.speed > Player.armor_rating:
+            if goblin.speed > player.armor_rating:
                 dice2 = randint(1,6)
                 if goblin.weapon == "knife":
                     result = dice2 * 0.5
@@ -31,11 +30,11 @@ class Goblin:
                     result = dice2
                 elif goblin.weapon == "ax":
                     result = dice2 * 1.5
-                Player.power += result
-                Player.hp -= Player.power
-                if Player.hp <= 0:
+                player.power += result
+                player.hp -= player.power
+                if player.hp <= 0:
                     exit
             else:
-                goblin , Player = Player ,goblin
+                goblin , player = player ,goblin
         else:
-            Player.attack()
+            player.attack()
