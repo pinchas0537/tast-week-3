@@ -6,9 +6,9 @@ class Player:
     
     def __init__(self, name):
         self.name = name
-        self.hp = 50  # חיים התחלתיים – .50 אם המקצוע הוא ”מרפא“ – +10 חיים נוספים. אם יורד מתחת ל0 - השחקן מת
-        self.speed = randint(5,10) # מהירות, משפיע על מי תוקף ראשון
-        self.power = randint(5,10) #  עוצמה, משפיע על הנזק בקרב. ערך אקראי בין 5–.10 אם המקצוע הוא ”לוחם“ – 2+ לעוצמה
+        self.hp = 50  
+        self.speed = randint(5,10) 
+        self.power = randint(5,10) 
         self.armor_rating = randint(5,15)
         self.profession = choice(Player.static_profession)
         
